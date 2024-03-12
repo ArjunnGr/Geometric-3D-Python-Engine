@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Results</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #e9ecef;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            color: #495057;
+        }
+        .results-container {
+            background-color: #ffffff;
+            padding: 40px;
+            margin: 20px;
+            border-radius: 8px;
+            width: 80%; /* Adjust the width as needed */
+            max-width: 600px; /* Adjust the max-width as needed */
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            border: 1px solid #dee2e6;
+        }
+        h1 {
+            color: #007bff;
+            margin-bottom: 30px;
+        }
+        h2 {
+            color: #6c757d;
+            border-bottom: 2px solid #dee2e6;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+        p {
+            background-color: #f8f9fa;
+            padding: 10px 15px;
+            border-radius: 5px;
+            display: inline-block;
+            margin: 10px 0;
+            border: 1px solid #dee2e6;
+        }
+        a {
+            display: inline-block;
+            margin-top: 30px;
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s, box-shadow 0.3s;
+        }
+        a:hover {
+            background-color: #0056b3;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+        }
+    </style>
+</head>
+<body>
+    <h1>Results</h1>
+
+    <!-- Bounding Box Results -->
+    {% if result.get('bbox') %}
+    <h2>Bounding Box</h2>
+    <p>Min Point: {{ result['bbox']['min_point'] }}</p>
+    <p>Max Point: {{ result['bbox']['max_point'] }}</p>
+    {% endif %}
+    {% if error %}
+    <p class="error">Error: {{ error }}</p>
+    <p>Error: {{ error }}</p>
+    {% endif %}
+
+    <!-- Rotated Mesh Results -->
+    {% if result.get('rotated_mesh') %}
+    <h2>Rotated Mesh</h2>
+    <p>{{ result['rotated_mesh'] }}</p>
+    {% endif %}
+    {% if error %}
+    <p class="error">Error: {{ error }}</p>
+    <p>Error: {{ error }}</p>
+    {% endif %}
+
+    <!-- Move Mesh Results -->
+    {% if result.get('moved_mesh') %}
+    <h2>Move Mesh</h2>
+    <p>Moved Mesh: {{ result['moved_mesh'] }}</p>
+    {% endif %}
+    {% if error %}
+    <p class="error">Error: {{ error }}</p>
+    <p>Error: {{ error }}</p>
+    {% endif %}
+
+    <!-- Convexity Check Results -->
+    {% if result.get('is_convex') != None %}
+    <h2>Convexity Check</h2>
+    <p>Polygon is Convex: {{ result['is_convex'] }}</p>
+    {% endif %}
+
+    <!-- Scaled Mesh Results -->
+    {% if result.get('scaled_mesh') %}
+    <h2>Scaled Mesh</h2>
+    <p>Scaled Mesh: {{ result['scaled_mesh'] }}</p>
+    {% endif %}
+
+    <!-- General Error Message -->
+    {% if error %}
+    <p>Error: {{ error }}</p>
+    {% endif %}
+
+    <a href="/">Go Back</a>
+</body>
+</html>

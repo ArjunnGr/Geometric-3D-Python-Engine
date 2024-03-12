@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Geometric 3D Operations Engine</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+        }
+        .container {
+            width: 100%;
+            max-width: 600px; 
+        }
+        .button {
+            width: auto;
+            padding: 10px 20px;
+            font-size: 16px;
+        }
+        .form-section {
+            background: #fff;
+            margin: 10px;
+            padding: 10px;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+        label {
+            display: block;
+            margin-bottom: 10px;
+        }
+        input[type="text"], input[type="number"], input[type="submit"], select {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+        input[type="submit"] {
+            background-color: #5c6bc0;
+            color: white;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            margin-top: 10px;
+        }
+        input[type="submit"]:hover {
+            background-color: #3949ab;
+        }
+        h1, h2 {
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <h1>Geometric 3D Operations Engine</h1>
+    <h2>Calculate Bounding Box</h2>
+    <form action="/bounding-box" method="post">
+        <label for="points">Enter points as an array (e.g: "[[1, 1, 1], [2, 2, 2], [3 ,4 ,5]]"):</label>
+        <input type="text" id="points" name="points"><br>
+        <input type="submit" value="Bounding Box" class="button">
+    </form>
+    <h2>Rotate Mesh</h2>
+    <form action="/rotate-mesh" method="post">
+        <label for="mesh">Enter mesh (e.g: "[[0, 1, 2], [2, 1, 2], [3 ,4 ,5]]"):</label>
+        <input type="text" id="mesh" name="mesh"><br>
+        <label for="angle">Angle (e.g., "45"):</label>
+        <input type="number" id="angle" name="angle" step="any"><br>
+        <label for="axis">Axis (e.g., "Y"):</label>
+        <input type="text" id="axis" name="axis"><br>
+        <input type="submit" value="Rotate Mesh" class="button">
+    </form>
+    <h2>Move Mesh</h2>
+    <form action="/move-mesh" method="post">
+        <label for="mesh">Enter mesh points as a list of lists (e.g: "[[1, 1, 1], [2, 2, 2], [3 ,3 ,3]]"):</label><br>
+        <input type="text" id="mesh" name="mesh"><br>
+        <label for="translation">Enter translation vector (e.g., "[1, 1, 1]"):</label><br>
+        <input type="text" id="translation" name="translation"><br>
+        <input type="submit" value="Move Mesh" class="button">
+    </form>
+    <h2>Convexity Check</h2>
+    <form action="/check-convexity" method="post">
+        <label for="polygon">Enter polygon points as an array (e.g: "[[0,0,0], [2,0,0], [1,1,1], [0,2,1]]"):</label>
+        <input type="text" id="polygon" name="polygon"><br>
+        <input type="submit" value="Check Convexity" class="button">
+    </form>
+    <h2>Scale Mesh</h2>
+    <form action="/scale-mesh" method="post">
+        <label for="mesh">Enter mesh points as a list of lists (e.g: "[[1, 1, 1], [2, 2, 2],[3, 3, 3]]"):</label><br>
+        <input type="text" id="mesh" name="mesh"><br>
+        <label for="scale_factor">Enter scale factor (e.g., "2"):</label><br>
+        <input type="text" id="scale_factor" name="scale_factor"><br>
+        <label for="precision">Enter Precision Value (e.g., 2):</label><br>
+        <input type="text" id="precision" name="precision"><br>
+        <input type="submit" value="Scale Mesh" class="button">
+    </form>
+    <!-- Add other forms for rotate-mesh, move-mesh, and check-convexity -->
+</body>
+</html>
