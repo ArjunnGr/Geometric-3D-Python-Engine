@@ -57,7 +57,6 @@ class TestMeshRotate(unittest.TestCase):
         with self.assertRaises(ValueError):
             rotate_point(point, angle_rad, 'A')
 
-    # You can add similar tests for rotate_mesh function as needed.
 
 if __name__ == '__main__':
     unittest.main()

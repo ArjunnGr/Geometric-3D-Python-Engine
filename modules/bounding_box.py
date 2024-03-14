@@ -1,4 +1,4 @@
-# modules/bounding_box.py
+
 
 def calculate_smallest_bounding_box(points):
     """
@@ -13,11 +13,11 @@ def calculate_smallest_bounding_box(points):
     if not points:
         raise ValueError("No points provided")
     
-    # Initialize min and max points to the first point's coordinates
+    
     min_x, min_y, min_z = points[0]
     max_x, max_y, max_z = points[0]
 
-    # Iterate through all points to find the min and max for each axis
+  
     for (x, y, z) in points:
         min_x = min(min_x, x)
         min_y = min(min_y, y)

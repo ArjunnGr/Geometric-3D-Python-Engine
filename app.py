@@ -16,7 +16,6 @@ def home():
 def bounding_box():
     try:
         points_string = request.form.get('points')
-        #points = json.loads(points_string)
         if not points_string:
             raise ValueError('No points data provided')
 
@@ -83,11 +82,9 @@ def move_mesh_endpoint():
         if not (isinstance(translation_vector, list) and len(translation_vector) == 3):
             raise ValueError('Translation vector must be a list of three values')
 
-        moved_mesh = move_mesh(mesh, translation_vector)  # Ensure this function is defined correctly
-        # Render the results with moved mesh
+        moved_mesh = move_mesh(mesh, translation_vector)  
         return render_template('results.html', result={'moved_mesh': moved_mesh})
     except Exception as e:
-        # Handle exceptions
         return render_template('results.html', result = {}, error=str(e))
     
 
@@ -98,13 +95,13 @@ def check_convexity_endpoint():
         if not data:
             raise ValueError("No polygon provided")
 
-        # Attempt to parse the JSON data
+        
         try:
             polygon = json.loads(data)
         except json.JSONDecodeError as json_err:
             raise ValueError(f"Invalid Input Error, Add Brackets []")
 
-        # Validate the polygon format
+       
         if not all(isinstance(point, list) and len(point) == 3 for point in polygon):
             raise ValueError("Each input point must be a list of three coordinates")
         is_convex_flag = is_convex(polygon)
@@ -121,17 +118,17 @@ def scale_mesh_endpoint():
         if not mesh_string:
             raise ValueError("No mesh data provided")
 
-        # Attempt to parse the JSON data for mesh
+       
         try:
             mesh = json.loads(mesh_string)
         except json.JSONDecodeError:
             raise ValueError("Invalid format for mesh, add brackets []")
 
-        # Validate the mesh format
+       
         if not all(isinstance(point, list) and len(point) == 3 for point in mesh):
             raise ValueError("Each mesh point must be a list of three coordinates")
 
-        # Attempt to get and convert the scale factor
+       
         scale_factor = request.form.get('scale_factor')
         if not scale_factor:
             raise ValueError("No scale factor provided")
@@ -141,7 +138,7 @@ def scale_mesh_endpoint():
         except ValueError:
             raise ValueError("Scale factor must be a number")
 
-        # Get the precision, default to 2 if not provided
+      
         precision = request.form.get('precision', 2)
         if not precision:
             raise ValueError("No precision value provided")
@@ -151,15 +148,13 @@ def scale_mesh_endpoint():
             raise ValueError("Precision must be an integer")
         scaled_mesh = scale_mesh(mesh, scale_factor, precision)
         
-        # Render the results with scaled mesh
+      
         return render_template('results.html', result={'scaled_mesh': scaled_mesh})
 
     except ValueError as e:
-        # Catch and handle the custom ValueError exceptions
         return render_template('results.html', result={},error=str(e))
 
     except Exception as e:
-        # Catch all other exceptions
         return render_template('results.html', result={},error=str(e))
 
 if __name__ == '__main__':

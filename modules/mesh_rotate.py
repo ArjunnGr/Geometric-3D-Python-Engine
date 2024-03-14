@@ -1,4 +1,4 @@
-# modules/mesh_rotate.py
+
 import math
 
 def rotate_point(point, angle_rad, axis):
@@ -48,11 +48,11 @@ def rotate_mesh(mesh, angle_deg, axis):
     Returns:
     list: The mesh after rotation, as a list of new (x, y, z) tuples.
     """
-    angle_rad = math.radians(angle_deg)  # Convert angle from degrees to radians
+    angle_rad = math.radians(angle_deg)  
     return [rotate_point(point, angle_rad, axis) for point in mesh]
 
 
-# This is a simple test to check if the function is working as expected.
+
 if __name__ == '__main__':
     test_mesh = [(1, 0, 0), (0, 1, 0), (0, 0, 1)]
     rotated_mesh = rotate_mesh(test_mesh, 90, 'Z')

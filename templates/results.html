@@ -22,8 +22,8 @@
             padding: 40px;
             margin: 20px;
             border-radius: 8px;
-            width: 80%; /* Adjust the width as needed */
-            max-width: 600px; /* Adjust the max-width as needed */
+            width: 80%; 
+            max-width: 600px; 
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
             text-align: center;
             border: 1px solid #dee2e6;
@@ -65,7 +65,7 @@
 <body>
     <h1>Results</h1>
 
-    <!-- Bounding Box Results -->
+    
     {% if result.get('bbox') %}
     <h2>Bounding Box</h2>
     <p>Min Point: {{ result['bbox']['min_point'] }}</p>
@@ -76,7 +76,7 @@
     <p>Error: {{ error }}</p>
     {% endif %}
 
-    <!-- Rotated Mesh Results -->
+    
     {% if result.get('rotated_mesh') %}
     <h2>Rotated Mesh</h2>
     <p>{{ result['rotated_mesh'] }}</p>
@@ -86,7 +86,7 @@
     <p>Error: {{ error }}</p>
     {% endif %}
 
-    <!-- Move Mesh Results -->
+   
     {% if result.get('moved_mesh') %}
     <h2>Move Mesh</h2>
     <p>Moved Mesh: {{ result['moved_mesh'] }}</p>
@@ -96,19 +96,19 @@
     <p>Error: {{ error }}</p>
     {% endif %}
 
-    <!-- Convexity Check Results -->
+    
     {% if result.get('is_convex') != None %}
     <h2>Convexity Check</h2>
     <p>Polygon is Convex: {{ result['is_convex'] }}</p>
     {% endif %}
 
-    <!-- Scaled Mesh Results -->
+    
     {% if result.get('scaled_mesh') %}
     <h2>Scaled Mesh</h2>
     <p>Scaled Mesh: {{ result['scaled_mesh'] }}</p>
     {% endif %}
 
-    <!-- General Error Message -->
+   
     {% if error %}
     <p>Error: {{ error }}</p>
     {% endif %}

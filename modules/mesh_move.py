@@ -1,4 +1,4 @@
-# modules/mesh_move.py
+
 
 def move_mesh(mesh, translation_vector):
     """
@@ -15,7 +15,7 @@ def move_mesh(mesh, translation_vector):
     moved_mesh = [(x + tx, y + ty, z + tz) for x, y, z in mesh]
     return moved_mesh
 
-# This is a simple test to check if the function is working as expected.
+
 if __name__ == '__main__':
     test_mesh = [(1, 2, 3), (4, 5, 6), (7, 8, 9)]
     translation_vector = (10, -10, 0)
