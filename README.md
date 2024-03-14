@@ -2,11 +2,20 @@ Prerequisites
 
 Before you begin, ensure you have met the following requirements:
 
-You have installed the latest version of Docker.
+> You have installed the latest version of Docker.
 
-You have a <Windows/Linux/Mac> machine. State which OSs are supported/unsupported.
+> You have a <Windows/Linux/Mac> machine. State which OSs are supported/unsupported.
 
-You have read <README.md>.
+> You have read 
+
+```
+README.md
+```
+
+
+
+
+
 
 
 To install <Geometric-3D-Python-Engine>, follow these steps:
@@ -41,6 +50,9 @@ python3 app.py
 ```
 in root directory of your project.
 
+
+
+
 Make sure docker application is running on your system
 
 ```
@@ -52,6 +64,9 @@ docker run -p 8000:80 <your_projectname>
 ```
 
 After running the commands, you can access the application at http://localhost:8000 from your web browser.
+
+
+
 
 Contributing to <Geometric-3D-Python-Engine>
 
