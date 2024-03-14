@@ -51,7 +51,7 @@ python3 app.py
 in root directory of your project.
 
 
-
+Make sure you have all the dependencies mentioned in the requirements.txt file.
 
 Make sure docker application is running on your system
 
