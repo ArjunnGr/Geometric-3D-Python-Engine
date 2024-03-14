@@ -30,13 +30,16 @@ source venv/bin/activate
 ```
 in the source directory of your project.
 
-run ```
+run 
+```
 cd venv
 ``` 
 
-run ```
+run 
+```
 python3 app.py
-``` in root directory of your project.
+```
+in root directory of your project.
 
 Make sure docker application is running on your system
 
@@ -56,15 +59,18 @@ To contribute to <Geometric-3D-Python-Engine>, follow these steps:
 
 Fork this repository.
 
-Create a branch: ```
+Create a branch: 
+```
 git checkout -b <branch_name>.
 ```
 
-Make your changes and commit them: ```
+Make your changes and commit them: 
+```
 git commit -m '<commit_message>
 ```
 
-Push to the original branch: ```
+Push to the original branch:
+```
 git push origin <your_projectname>/<branch_name>
 ```
 
