@@ -24,9 +24,11 @@ Using <Geometric-3D-Python-Engine>
 
 To use <Geometric-3D-Python-Engine>, follow these steps:
 
-run ```
+run 
+```
 source venv/bin/activate
-``` in the source directory of your project.
+```
+in the source directory of your project.
 
 run ```
 cd venv
