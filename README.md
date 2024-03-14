@@ -11,26 +11,40 @@ You have read <README.md>.
 
 To install <Geometric-3D-Python-Engine>, follow these steps:
 
-'''git clone https://github.com/ArjunnGr/Geometric-3D-Python-Engine.git'''
+```
+git clone https://github.com/ArjunnGr/Geometric-3D-Python-Engine.git
+```
 
-'''cd reponame'''
+```
+cd reponame
+```
 
 
 Using <Geometric-3D-Python-Engine>
 
 To use <Geometric-3D-Python-Engine>, follow these steps:
 
-run '''source venv/bin/activate''' in the source directory of your project.
+run ```
+source venv/bin/activate
+``` in the source directory of your project.
 
-run '''cd venv''' 
+run ```
+cd venv
+``` 
 
-run '''python3 app.py''' in root directory of your project.
+run ```
+python3 app.py
+``` in root directory of your project.
 
 Make sure docker application is running on your system
 
-'''docker build -t docker build -t <your_projectname> .'''
+```
+docker build -t docker build -t <your_projectname> .
+```
 
-'''docker run -p 8000:80 <your_projectname>'''
+```
+docker run -p 8000:80 <your_projectname>
+```
 
 After running the commands, you can access the application at http://localhost:8000 from your web browser.
 
@@ -40,11 +54,17 @@ To contribute to <Geometric-3D-Python-Engine>, follow these steps:
 
 Fork this repository.
 
-Create a branch: '''git checkout -b <branch_name>.'''
+Create a branch: ```
+git checkout -b <branch_name>.
+```
 
-Make your changes and commit them: '''git commit -m '<commit_message>'''
+Make your changes and commit them: ```
+git commit -m '<commit_message>
+```
 
-Push to the original branch: '''git push origin <your_projectname>/<branch_name>'''
+Push to the original branch: ```
+git push origin <your_projectname>/<branch_name>
+```
 
 Create the pull request.
 
